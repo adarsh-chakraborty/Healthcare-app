@@ -24,7 +24,7 @@ const HomePage = () => {
             expanding physician’s ability to care for patients in a quick and
             accurate manner.
           </p>
-          <Link to="/pharmacy">
+          <Link to="/loginui">
             <button class="custBtn">Explore</button>
           </Link>
         </div>

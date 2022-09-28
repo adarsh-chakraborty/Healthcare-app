@@ -41,7 +41,14 @@ const UserRegistration = () => {
         setSignedUp(true);
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.response.status);
+
+        if (err.response.status == 409) {
+          setError([
+            { msg: 'Email already exists. Use another e-mail or login' }
+          ]);
+          return;
+        }
         setError(err.response.data.errors);
       });
   };

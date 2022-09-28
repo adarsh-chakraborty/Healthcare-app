@@ -22,10 +22,10 @@ const Navbar = () => {
           data-toggle="collapse"
           data-target="#collapsibleNavbar"
         >
-          <span
-            style={{ backgroundColor: 'black' }}
-            class="navbar-toggler-icon"
-          ></span>
+          <img
+            className="navbar-toggler-icon"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png"
+          />
         </button>
 
         <div class="collapse navbar-collapse " id="collapsibleNavbar">
@@ -33,21 +33,25 @@ const Navbar = () => {
             class="navbar-nav"
             style={{ justifyContent: 'center', alignItems: 'center' }}
           >
-            <li className="nav-item">
-              <Link
-                style={{ color: 'black' }}
-                className="nav-link"
-                to="/symptoms"
-              >
-                Treatment and Symptom Report
-              </Link>
-            </li>
+            {isloggedIn && (
+              <li className="nav-item">
+                <Link
+                  style={{ color: 'black' }}
+                  className="nav-link"
+                  to="/symptoms"
+                >
+                  Treatment and Symptom Report
+                </Link>
+              </li>
+            )}
 
-            <li class="nav-item">
-              <Link style={{ color: 'black' }} class="nav-link" to="/chronic">
-                Chronic Disease Detection
-              </Link>
-            </li>
+            {isloggedIn && (
+              <li class="nav-item">
+                <Link style={{ color: 'black' }} class="nav-link" to="/chronic">
+                  Chronic Disease Detection
+                </Link>
+              </li>
+            )}
 
             {isloggedIn ? (
               <Link style={{ color: 'black' }} class="nav-link" to="/">
