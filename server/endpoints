@@ -1,5 +1,4 @@
-/api/v1/auth/verify/:id?otp=XXXXXX
---- id,otp
+=
 
 /api/v1/auth/signup
 --- name (min 3), email, password(min 8), confPassword, sex(1,0), age
@@ -8,6 +7,4 @@
 --- email, password
 
 
-/api/v1/hospitals/request
---- name, email, phone, password, confPassword, address, city, state
 

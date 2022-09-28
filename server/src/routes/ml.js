@@ -22,7 +22,7 @@ router.post('/diabetes', (req, res, next) => {
     phyHlt,
     diffWlk,
     gender,
-    age,
+    age
   } = req.body;
   axios
     .post('http://localhost:8000/diabetes', {
@@ -40,12 +40,12 @@ router.post('/diabetes', (req, res, next) => {
       phyHlt,
       diffWlk,
       gender,
-      age,
+      age
     })
     .then((response) => {
       return res.status(200).json({
         message: 'Prediction Results',
-        probabilityArray: response.data,
+        probabilityArray: response.data
       });
     })
     .catch((e) => {
@@ -72,7 +72,7 @@ router.post('/pcos', (req, res, next) => {
     hairFall,
     pimple,
     fastfood,
-    exercise,
+    exercise
   } = req.body;
 
   axios
@@ -94,12 +94,12 @@ router.post('/pcos', (req, res, next) => {
       hairFall,
       pimple,
       fastfood,
-      exercise,
+      exercise
     })
     .then((response) => {
       return res.status(200).json({
         message: 'Prediction Results',
-        probabilityArray: response.data,
+        probabilityArray: response.data
       });
     })
     .catch((e) => {
@@ -126,12 +126,12 @@ router.post('/depression', (req, res, next) => {
       q34,
       q37,
       q38,
-      q42,
+      q42
     })
     .then((response) => {
       return res.status(200).json({
         message: 'Prediction Results',
-        probabilityArray: response.data,
+        probabilityArray: response.data
       });
     })
     .catch((e) => {
@@ -147,12 +147,12 @@ router.post('/disease', (req, res, next) => {
 
   axios
     .post('http://localhost:8000/disease', {
-      answerState,
+      answerState
     })
     .then((response) => {
       return res.status(200).json({
         message: 'Prediction Results',
-        probabilityArray: response.data,
+        probabilityArray: response.data
       });
     })
     .catch((e) => {
@@ -164,17 +164,16 @@ router.post('/predict', (req, res, next) => {
   //const { q3, q5, q10, q13, q16, q17, q21, q24, q26, q31, q34, q37, q38, q42 } =
   //req.body;
   const answerState = req.body;
-  console.log('hello', answerState);
+  console.log('debug', answerState);
 
   axios
     .post('http://localhost:8000/predict', {
-      answerState,
+      answerState
     })
     .then((response) => {
       return res.status(200).json({
         message: 'Prediction Results',
-        probabilityArray: response.data,
-        
+        probabilityArray: response.data
       });
     })
     .catch((e) => {

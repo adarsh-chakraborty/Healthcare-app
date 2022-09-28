@@ -226,12 +226,12 @@ def predictSymptoms(body:dict=Body(...)):
       
        
     
-    print("hello",previousSymptoms)
+    print("debug",previousSymptoms)
     
     
 
    
-    print("hello",symptom_str)
+    print("debug",symptom_str)
 
     return {"answer":answer}
 df_disease=pd.read_csv('symptom_Description.csv')
